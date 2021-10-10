@@ -20,6 +20,8 @@ function preload(){
 
 function setup(){
 
+  createCanvas(400,600)
+
 path=createSprite(width/2,200);
 path.addImage(pathImg);
 path.velocityY = 4;
@@ -42,6 +44,10 @@ function draw() {
 
   if(gameState===PLAY){
   background(0);
+
+  if(path.y > 400 ){
+    path.y = height/2; 
+  } 
   boy.x = World.mouseX;
   
   edges= createEdgeSprites();
